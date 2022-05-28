@@ -6,7 +6,7 @@ from sklearn.neighbors import NearestNeighbors
 
 @app.route("/")
 def index():
-    with open(r'app\static\pickle\df1.pkl', "rb") as input_file:
+    with open(r'app/static/pickle/df1.pkl', "rb") as input_file:
         dataFrame_1=pickle.load(input_file)
     car_name=dataFrame_1['car_name'].values.tolist()
     return render_template('index.html',car_name=car_name)
@@ -26,14 +26,14 @@ def item_based_search():
       return recommend_knn(result['highway_mileage'],result['city_mileage'],result['price'],result['companyRatingvalue'],result['consumerRatingvalue'])
 
 def recommend_knn(highway_mileage,city_mileage,price,companyRatingvalue,consumerRatingvalue):
-    with open(r'app\static\pickle\csr_sample.pkl', "rb") as input_file:
+    with open(r'app/static/pickle/csr_sample.pkl', "rb") as input_file:
         csr_sample=pickle.load(input_file)
     input_file.close()
-    with open(r'app\static\pickle\df1.pkl', "rb") as input_file:
+    with open(r'app/static/pickle/df1.pkl', "rb") as input_file:
         cars_data=pickle.load(input_file)
     input_file.close()
     cars_data.rename(columns={'name':'cname'},inplace=True)
-    with open(r'app\static\pickle\df2.pkl', "rb") as input_file:
+    with open(r'app/static/pickle/df2.pkl', "rb") as input_file:
         df=pickle.load(input_file)
     input_file.close()
 
@@ -91,14 +91,14 @@ def recommend_knn(highway_mileage,city_mileage,price,companyRatingvalue,consumer
 
 
 def recommend(car):
-    with open(r'app\static\pickle\df1.pkl', "rb") as input_file:
+    with open(r'app/static/pickle/df1.pkl', "rb") as input_file:
         cars_data=pickle.load(input_file)
     input_file.close()
 
     cars_data.rename(columns={'name':'cname'},inplace=True)
     # print(cars_data.columns)
 
-    with open(r'app\static\pickle\similarity.pkl', "rb") as input_file:
+    with open(r'app/static/pickle/similarity.pkl', "rb") as input_file:
         similarity=pickle.load(input_file)
     input_file.close()
     car_record=cars_data[cars_data['car_name'] == car]
