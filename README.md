@@ -31,7 +31,7 @@ Website Link:
 https://car-verse-app.herokuapp.com
 
 
-# To run the app in ypur local desktop
+# To run the app in your local desktop
 1.Clone the repository and save it.
 
 2.Open the terminal where you have saved these files.
