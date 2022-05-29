@@ -31,6 +31,12 @@ Website Link:
 https://car-verse-app.herokuapp.com
 
 
+# To run the app in ypur local desktop
+1.Clone the repository and save it.
 
+2.Open the terminal where you have saved these files.
 
+3.Wirte pip install -r requirements.txt 
+
+4. After the installation of the requirements, type flask run.
 
