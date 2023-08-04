@@ -36,7 +36,10 @@ https://car-verse-app.herokuapp.com
 
 2.Open the terminal where you have saved these files.
 
-3.Wirte pip install -r requirements.txt 
+3.Wirte pip install -r requirements.txt .
 
 4. After the installation of the requirements, type flask run.
+
+   ## Video description of the project:
+    https://youtu.be/h6-l_lbz9kU
 
